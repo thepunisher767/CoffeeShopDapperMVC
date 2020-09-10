@@ -1,0 +1,8 @@
+﻿@model List<Product>
+
+
+@foreach (Product product in Model)
+{
+    <a href="/Product/Details?Name=@product.Name">@product.Name</a><br /><br />
+}
+
