@@ -7,6 +7,7 @@ using CoffeeShoppp.Models;
 using Dapper;
 using System.Data;
 using System.Data.SqlClient;
+using Dapper.Contrib.Extensions;
 
 namespace CoffeeShoppp.Controllers
 {
@@ -14,19 +15,12 @@ namespace CoffeeShoppp.Controllers
     {
         public IActionResult Index()
         {
-            IDbConnection db = new SqlConnection("Server =.;Database=devbuild1;user id=dbuser;password=abc123");
-            db.Open();
-            List<Product> productlist = db.Query<Product>("SELECT * FROM Product").AsList<Product>();
-            db.Close();
-            return View(productlist);
+            List<Product> list = Product.List();
+            return View(list);
         }
-        public IActionResult Details(string name)
+        public IActionResult Details(long _id)
         {
-            IDbConnection db = new SqlConnection("Server =.;Database=devbuild1;user id=dbuser;password=abc123");
-            db.Open();
-            Product item = db.QuerySingle<Product>($"SELECT * FROM Product WHERE Name='{name}'");
-            db.Close();
-            return View(item);
+            return View(_id);
         }
     }
 }
