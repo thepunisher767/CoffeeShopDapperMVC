@@ -1,0 +1,16 @@
+﻿@model List<Product>
+
+
+@foreach (Product product in Model)
+{
+    <a><b>@product.Name </b></a>
+    <a href="/Admin/Edit?_id=@product.id">EDIT </a>
+    <a href="/Admin/Delete?_id=@product.id">DELETE</a>
+    <br />
+    <br />
+}
+
+<br />
+<br />
+<a href="/Admin/Add"><b>ADD NEW ITEM</b></a>
+

@@ -1,0 +1,29 @@
+﻿@model Product
+
+<form action="/Admin/Save" method="post">
+    <fieldset>
+        <legend>New Item</legend>
+        <p>
+            <label><b>Product Name</b></label><br />
+            <input type="text"
+                   name="Name"
+                   value="@Model.Name"/>
+        </p>
+        <p>
+            <label><b>Price</b></label><br />
+            <input type="text"
+                   name="Price" 
+                   value="@Model.Price"/>
+        </p>
+        <p>
+            <label><b>Description<b /></label><br />
+            <textarea name="Description"
+                    rows="2"
+                    cols="50">@Model.Description
+            </textarea>
+        </p>
+        <br><br>
+        <input type="submit" value="Submit"/>
+        <input type="hidden" name="_id" value="@Model.id" />
+    </fieldset>
+</form>

@@ -1,0 +1,26 @@
+﻿@model Product
+
+    <form action="/Admin/Add" method="post">
+        <fieldset>
+            <legend>New Item</legend>
+            <p>
+                <label><b>Product Name</b></label><br />
+                <input type="text"
+                       name="Name" />
+            </p>
+            <p>
+                <label><b>Price</b></label><br />
+                <input type="text"
+                       name="Price" />
+            </p>
+            <p>
+                <label><b>Description<b/></label><br />
+                <textarea name="Description"
+                  rows = "2"
+                  cols = "50">
+                </textarea>
+            </p>
+            <br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
