@@ -4,8 +4,8 @@
 @foreach (Product product in Model)
 {
     <a><b>@product.Name </b></a>
-    <a href="/Admin/Edit?_id=@product.id">EDIT </a>
-    <a href="/Admin/Delete?_id=@product.id">DELETE</a>
+    <input type="button" onclick="location.href='/Admin/Edit?_id=@product.id';" value="EDIT" />
+    <input type="button" onclick="location.href='/Admin/Delete?_id=@product.id';" value="DELETE" />
     <br />
     <br />
 }
